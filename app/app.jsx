@@ -7,53 +7,20 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "style-loader!css-loader!sass-loader!../public/styles/global.scss";
 
 // components
-import NavigationContact from "NavigationContact";
-
-function toggleClassOnClick(query, className){
-    document.querySelector(query).classList.toggle(className);
-}
-
-
-function initContactNav(event){
-    
-    toggleClassOnClick(".nav-contact--trigger", "init");
-    toggleClassOnClick(".nav-contact--trigger .open", "init")
-    toggleClassOnClick(".nav-contact--trigger .close", "init")
-    toggleClassOnClick(".nav", "init")
-
-}
-
-
-function NavTrigger(){
-    return(
-        <p className="nav-contact--trigger" onClick={initContactNav}> 
-            <span className="open"> Contact </span> 
-            <span className="close"> Close </span> 
-        </p>
-    )
-};
-
+import Nav from "Nav";
+import Hero from "Hero";
 
 
 
 
 const Portfolio = props => {
+
     return(
         <Router>
             <div className="portfolio-container">
-                <NavTrigger></NavTrigger>
-                <NavigationContact></NavigationContact>
+                <Nav></Nav>
                 <main>
-                    <Route path="/" 
-                        render={ 
-                            () => {
-                                return(
-                                    true
-                                );
-                            } 
-                        }>
-                    
-                    </Route>
+                    <Hero></Hero>
                 </main>
 
             </div>
