@@ -1,13 +1,20 @@
 .header{
     display: grid;
+    position: relative;
 }
 
 .nav{
-    background: skyblue;    
-    padding: 7.5px 30px;
+    background: transparent;    
+    padding: 15px 30px;
     display: grid;
     grid-gap: 15px;
     grid-template-columns:  1fr;
+
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
 
     @media(min-width: 768px){
         grid-template-columns: repeat(2, 1fr);
@@ -19,6 +26,10 @@
     p.full-name{
         font-family: 'Inconsolata', monospace;
         font-weight: 600;
+        color: #324D5C;
+        text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
     }
 }
 
@@ -40,11 +51,20 @@
         list-style-type: none;
         display: inline-block;
         margin: 0 7.5px;
+        padding: 0 7.5px;
+        text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+        0px 8px 13px rgba(0,0,0,0.1),
+        0px 18px 23px rgba(0,0,0,0.1);
+        transition: 0.25s linear;
+
+        &:hover{
+            background:#F0CA4D;
+        }
 
         a{
-            color: #222;
+            color: #324D5C;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 20px;
             font-weight: 600;
             font-family: 'Roboto Mono',  monospace;
         }
@@ -66,6 +86,8 @@
         transition: all 0.35s linear;
         text-transform: uppercase;
         font-family: 'Roboto Mono',  monospace;
+        border: 2px solid #222;
+        box-shadow: 0 8px 6px -6px #222;
 
         &:hover{
             background-position-x: 100%;
@@ -114,7 +136,7 @@
                 margin: 0 7.5px;
 
                 &::before{
-                    color: #222;
+                    color: #324D5C;
                     font-size: 1.25rem;
                 }
 
@@ -240,7 +262,7 @@ span.last-name{
 
         & > div{
             padding: 50px 15px;
-            background: #222;
+            background:#324D5C;
             cursor: pointer;
             position: relative;
             transition: all 0.25s linear;
@@ -260,7 +282,7 @@ span.last-name{
                         background-color: rgba(255,255,255, 1);
                         opacity: 1;
                         visibility: visible;
-                        border: 2px solid #222;
+                        border: 2px solid #324D5C;
                     }
                 }
             }

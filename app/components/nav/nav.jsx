@@ -18,8 +18,8 @@ const Navigation = (props) => {
             <nav className="nav">
                 <div className="nav-left">
                     <p className="full-name h1">
-                        <span className="first-name">Ziaul </span>
-                        <span className="last-name">Sarker</span>
+                        <span className="first-name">Z</span>
+                        <span className="last-name">S</span>
                     </p>
                 </div>
                 <div className="nav-right">

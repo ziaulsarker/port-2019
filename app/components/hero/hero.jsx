@@ -12,8 +12,14 @@ class Hero extends React.Component {
 
     render(){
         return (
-            <div>
-                <canvas></canvas>	
+            <div className="hero">
+                <canvas></canvas>
+                <div className="HeroContent col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                    <h1>Hello, I'm <span>Ziaul Sarker</span>. Front End Developer with a passion for <span> Javascript</span>!</h1>
+                    <br></br>
+                    <p><a href="">View my work <span className=""></span></a></p>
+                </div>
+
             </div>
         );
     }
@@ -21,7 +27,7 @@ class Hero extends React.Component {
 
     componentDidMount(){
         let canvas = document.querySelector("canvas");
-        let c = canvas.getContext('2d'); //C = context
+        let c = canvas.getContext('2d'); 
 
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -41,11 +47,10 @@ class Hero extends React.Component {
         //let minRadius = 4;
 
         let colorArray = [
-            '#222',
-            'red',
-            // '#DE5B49',
-            // '#324D5C',
-            // '#F0CA4D',
+            'rgba(34,34,34, 0.66)',
+            '#fff',
+            '#324D5C',
+            '#F0CA4D',
         ];
 
         window.addEventListener('mousemove', function(event) {
@@ -54,35 +59,35 @@ class Hero extends React.Component {
         })
 
         window.addEventListener('resize', function() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
 
-        init();
+            init();
+
+            console.log(init);
         })
 
 
-        function Circle(x, y, dx, dy, radius) {
+        class Circle {
+            constructor(x, y, dx, dy, radius){
+                this.x = x;
+                this.y = y;
+                this.dx = dx;
+                this.dy = dy;
+                this.radius = Math.random() * 3 + 1;
+                this.minRadius = radius;
+    
+                this.color = colorArray[Math.floor(Math.random() * colorArray.length)];
+            }
 
-            this.x = x;
-            this.y = y;
-            this.dx = dx;
-            this.dy = dy;
-            this.radius = Math.random() * 3 + 1;
-            this.minRadius = radius;
-
-            this.color = colorArray[Math.floor(Math.random() * colorArray.length)];
-
-
-            this.draw = function() {
-
+            draw(){
                 c.beginPath();
                 c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
                 c.fillStyle = this.color;
-                c.fill();
-
+                c.fill(); 
             }
 
-            this.update = function() {
+            update(){
                 if (this.x + this.radius > innerWidth || this.x - this.radius < 0) {
                     this.dx = -this.dx;
                 }
@@ -113,8 +118,8 @@ class Hero extends React.Component {
 
                 this.draw();
             }
+        } 
 
-        }
 
         let circleArray = [];
 
@@ -122,7 +127,7 @@ class Hero extends React.Component {
 
             circleArray = [];
 
-            for(let i = 0; i < 800; i++) {
+            for(let i = 0; i < 450; i++) {
                 
                 let x = Math.random() * (window.innerWidth - radius * 2) + radius;
                 let y = Math.random() * (window.innerHeight - radius * 2) + radius;
@@ -131,7 +136,7 @@ class Hero extends React.Component {
                 let radius = Math.random() * 3 + 1;
 
                 circleArray.push(new Circle(x, y, dx, dy, radius));
-        }
+            }
 
         }
 
@@ -144,14 +149,6 @@ class Hero extends React.Component {
                 circleArray[i].update();
             }
 
-            c.font = '40px Arial';
-            c.fillStyle = '#F0B90C';
-            c.fillText("C A N V A S  C I R C L E S  E F F E C T ", window.innerWidth/4.25, 150);
-
-            c.beginPath();
-            c.font = '15px Arial';
-            c.fillStyle = '#edc23b';
-            c.fillText("b y  J i n a m b o", window.innerWidth/2.1, 190);
         }
 
         init();
