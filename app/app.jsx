@@ -9,6 +9,7 @@ import "style-loader!css-loader!sass-loader!../public/styles/global.scss";
 // components
 import Nav from "Nav";
 import Hero from "Hero";
+import About from "About";
 
 
 
@@ -21,6 +22,7 @@ const Portfolio = props => {
                 <Nav></Nav>
                 <main>
                     <Hero></Hero>
+                    <About></About>
                 </main>
 
             </div>

@@ -56,11 +56,13 @@ canvas {
         display: inline-block;
         font-family: 'Roboto Mono', monospace;
         background: #324D5C;
+        box-shadow: 0px 0 0 0 #324D5C inset; 
+
         border-radius: 50px;
         text-align: center;
         text-transform: uppercase;
         position: relative;
-        transition: all 0.35s linear;
+        transition: all 0.45s linear;
         font-weight: 500;
 
         @media(min-width: 768px){
@@ -69,11 +71,12 @@ canvas {
 
         &:hover{
             padding-right: 50px;
-            background: #F0CA4D;
+            // background: #F0CA4D;
+            box-shadow: 250px 0 0 0 #F0CA4D inset; 
             color: #324D5C;
             font-weight: 600;
             span{
-                animation: rotateArrow .5s linear forwards;
+                animation: rotateArrow .5s cubic-bezier(.17,.67,.83,.67) forwards;
                 -webkit-animation-fill-mode: forwards; 
                 -moz-animation-fill-mode: forwards;    
                 -o-animation-fill-mode: forwards;      
