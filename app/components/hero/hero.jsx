@@ -14,7 +14,7 @@ class Hero extends React.Component {
         return (
             <div className="hero">
                 <canvas></canvas>
-                <div className="HeroContent col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                <div className="HeroContent col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
                     <h1>Hello, I'm <span>Ziaul Sarker</span>. Front End Developer with a passion for <span> Javascript</span>!</h1>
                     <a href="#">View my work <span className="fas fa-arrow-right"></span></a>
                 </div>
