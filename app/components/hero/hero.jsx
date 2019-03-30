@@ -62,8 +62,6 @@ class Hero extends React.Component {
             canvas.height = window.innerHeight;
 
             init();
-
-            console.log(init);
         })
 
 

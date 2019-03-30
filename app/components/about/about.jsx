@@ -140,8 +140,6 @@ class About extends React.Component{
 
     componentDidMount(){
 
-
-
         let createGauge = (eleTarget, percent, config) => {
 
             let randomWaveHeight = Math.random();
@@ -178,12 +176,27 @@ class About extends React.Component{
         let webpack = createGauge("webpack", 75);
         let seo = createGauge("seo", 80);
         let wordpress = createGauge("wordpress", 85);
+
         let passion = createGauge("passion", 100, {
             textColor: "#324D5C",
             waveColor: "#fff",
             waveTextColor: "rgba(240,202,77, .9)",
             circleColor: "#fff"
         });
+
+
+
+        window.onresize = function(event) {
+            let svgs = Array.from(document.querySelectorAll(".skill svg"));
+            svgs.map(e => {
+                console.log(e.parentElement.offsetWidth);
+                let width = e.parentElement.offsetWidth;
+
+                e.setAttribute("viewBox", `0 0 ${width} 100%`);
+
+            })
+            console.log(svgs);
+        };
 
 
     }   
