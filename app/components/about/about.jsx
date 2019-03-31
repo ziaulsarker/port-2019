@@ -129,7 +129,7 @@ class About extends React.Component{
 
                         <div className="skill">
                             <svg id="passion" ></svg>
-                            <p>Passion To Learn</p>
+                            <p className="bold-text">Passion To Learn</p>
                         </div>
 
                     </div>
@@ -148,7 +148,7 @@ class About extends React.Component{
                 waveTextColor: "#fff",
                 textColor: "#324D5C",
                 circleColor: "#324D5C",
-                textSize: .5,
+                textSize: .65,
                 waveColor: "#324D5C",
                 waveHeight: ( randomWaveHeight > .009 && randomWaveHeight > .7) ? .05 : randomWaveHeight
             }
@@ -163,6 +163,7 @@ class About extends React.Component{
             let gauge = liquidFillGauge.loadLiquidFillGauge(eleTarget, percent, settings);
 
             window.addEventListener("resize", e => {
+                
                 gauge.update(percent);
                 console.log("updated gauge");
             })
