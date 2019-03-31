@@ -10,6 +10,7 @@ import "style-loader!css-loader!sass-loader!../public/styles/global.scss";
 import Nav from "Nav";
 import Hero from "Hero";
 import About from "About";
+import Projects from "Projects";
 
 
 
@@ -23,6 +24,7 @@ const Portfolio = props => {
                 <main>
                     <Hero></Hero>
                     <About></About>
+                    <Projects></Projects>
                 </main>
 
             </div>

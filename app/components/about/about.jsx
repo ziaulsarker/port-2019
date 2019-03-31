@@ -163,9 +163,8 @@ class About extends React.Component{
             let gauge = liquidFillGauge.loadLiquidFillGauge(eleTarget, percent, settings);
 
             window.addEventListener("resize", e => {
-                
                 gauge.update(percent);
-                console.log("updated gauge");
+                console.log("updated gauge translate");
             })
             return gauge;
         }
