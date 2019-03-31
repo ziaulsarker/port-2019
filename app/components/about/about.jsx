@@ -72,63 +72,63 @@ class About extends React.Component{
                     <div className="about-skills-wrapper">
 
                         <div className="skill">
-                            <svg id="html" width="100%" height="250"></svg>
+                            <svg id="html" ></svg>
                             <p>HTML</p>
                         </div>
 
                         <div className="skill">
-                            <svg id="css" width="100%" height="250"></svg>
+                            <svg id="css" ></svg>
                             <p>CSS</p>
                         </div>
 
                         <div className="skill">
-                            <svg id="js" width="100%" height="250"></svg>
+                            <svg id="js" ></svg>
                             <p>JS</p>
                         </div>
 
                         <div className="skill">
-                            <svg id="python" width="100%" height="250"></svg>
+                            <svg id="python" ></svg>
                             <p>python</p>
                         </div>
 
                         <div className="skill">
-                            <svg id="php" width="100%" height="250"></svg>
+                            <svg id="php" ></svg>
                             <p>PHP</p>
                         </div>
 
                         <div className="skill">
-                            <svg id="scss" width="100%" height="250"></svg>
+                            <svg id="scss" ></svg>
                             <p>SCSS / LESS</p>
                         </div>
 
 
                         <div className="skill">
-                            <svg id="react" width="100%" height="250"></svg>
+                            <svg id="react" ></svg>
                             <p>React / Redux</p>
                         </div>
 
                         <div className="skill">
-                            <svg id="node" width="100%" height="250"></svg>
+                            <svg id="node" ></svg>
                             <p>Node / NPM</p>
                         </div>
 
                         <div className="skill">
-                            <svg id="webpack" width="100%" height="250"></svg>
+                            <svg id="webpack" ></svg>
                             <p>webpack / gulp</p>
                         </div>
 
                         <div className="skill">
-                            <svg id="seo" width="100%" height="250"></svg>
+                            <svg id="seo" ></svg>
                             <p>SEO</p>
                         </div>
                         
                         <div className="skill">
-                            <svg id="wordpress" width="100%" height="250"></svg>
+                            <svg id="wordpress" ></svg>
                             <p>Wordpress</p>
                         </div>
 
                         <div className="skill">
-                            <svg id="passion" width="100%" height="250"></svg>
+                            <svg id="passion" ></svg>
                             <p>Passion To Learn</p>
                         </div>
 
@@ -153,7 +153,6 @@ class About extends React.Component{
                 waveHeight: ( randomWaveHeight > .009 && randomWaveHeight > .7) ? .05 : randomWaveHeight
             }
 
-            console.log(customDefaultSettings.waveHeight);
 
             let settings = {
                 ...liquidFillGauge.liquidFillGaugeDefaultSettings(),
@@ -162,6 +161,12 @@ class About extends React.Component{
             };
 
             let gauge = liquidFillGauge.loadLiquidFillGauge(eleTarget, percent, settings);
+
+            window.addEventListener("resize", e => {
+                gauge.update(percent);
+                console.log("updated gauge");
+            })
+            return gauge;
         }
 
 
@@ -180,23 +185,11 @@ class About extends React.Component{
         let passion = createGauge("passion", 100, {
             textColor: "#324D5C",
             waveColor: "#fff",
-            waveTextColor: "rgba(240,202,77, .9)",
-            circleColor: "#fff"
+            waveTextColor: "#324D5C",
+            circleColor: "#fff",
+            textSize: 1
         });
 
-
-
-        window.onresize = function(event) {
-            let svgs = Array.from(document.querySelectorAll(".skill svg"));
-            svgs.map(e => {
-                console.log(e.parentElement.offsetWidth);
-                let width = e.parentElement.offsetWidth;
-
-                e.setAttribute("viewBox", `0 0 ${width} 100%`);
-
-            })
-            console.log(svgs);
-        };
 
 
     }   

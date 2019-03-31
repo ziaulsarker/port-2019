@@ -155,23 +155,39 @@
 .about-skills-wrapper{
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+    justify-content: center;
+    align-items: center;
+
+    @media(min-width: 600px){
+        grid-gap: 30px;
+        grid-template-columns: repeat(3, 1fr); 
+    }
+
+    @media(min-width: 768px){
+        grid-template-columns: repeat(4, 1fr);
+    }
 
 
     .skill{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .liquidFillGaugeText{
+            font-family: 'Inconsolata', monospace;
+        }
 
         svg{
-            height: 100;
+
+
+            max-width: 100%;
+            max-height: 200px;
 
             @media(min-width: 768px){
-                height: 200px;
-
-            }
-
-            @media(min-width: 992px){
-                height: 250px;
-                
+                max-height: 250px;
             }
         }
 
