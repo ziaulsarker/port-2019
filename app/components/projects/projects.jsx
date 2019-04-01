@@ -4,12 +4,14 @@ import path from "path";
 // import styles
 import "style-loader!css-loader!sass-loader!./projects.scss";
 
+console.log(__dirname);
+
 const projects = [
     {
         name : `Health Coach Institute`,
         link : `https://www.healthcoachinstitute.com/`,
         img : {
-            src : `url('${ path.resolve(__dirname, "/public/img/hci.png" )}')`,
+            src : `${ path.resolve(__dirname, "/public/img/hci.png" )}`,
             alt : `Health Coach Institute`
         }
     },
@@ -18,8 +20,35 @@ const projects = [
         name : `HCI Live`,
         link : `https://www.hcilive.com/`,
         img : {
-            src : `url('${ path.resolve(__dirname, "/public/img/hcilive.png" )}')`,
+            src : `${ path.resolve(__dirname, "/public/img/hcilive.png" )}`,
             alt : `HCI Live`
+        }
+    },
+
+    {
+        name : `Functional Nutrition Alliance`,
+        link : `https://signup.fxnutrition.com/`,
+        img : {
+            src : `${ path.resolve(__dirname, "/public/img/fxna.png" )}`,
+            alt : `Functional Nutrition Alliance`
+        }
+    },
+
+    {
+        name : `Wilbur Ellis`,
+        link : `https://www.wilburellis.com/`,
+        img : {
+            src : `${ path.resolve(__dirname, "/public/img/wilbur.png" )}`,
+            alt : `Wilbur Ellis`
+        }
+    },
+
+    {
+        name : `National Holdings`,
+        link : `https://www.yournational.com/`,
+        img : {
+            src : `${ path.resolve(__dirname, "/public/img/national.png" )}`,
+            alt : `National Holdings`
         }
     },
 
