@@ -38,5 +38,3 @@ ReactDOM.render(
     document.getElementById("portfolio")
 );
 
-
-console.log("testing port");

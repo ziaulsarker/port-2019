@@ -1,5 +1,5 @@
 .projects{
-    height: 100vh;
+    // height: 100vh;
     background: #324D5C;
     position: relative;
     
@@ -104,17 +104,112 @@
 }
 
 .project-section-wrapper{
+
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 30px 15px;
+    padding: 30px 0;
+
+    @media(min-width: 540px){
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 15px;
+    }
+
+    @media(min-width: 768px){
+        grid-gap: 30px;
+        padding: 45px 30px;
+    }
+
+    @media(min-width: 992px){
+        grid-gap: 45px;
+        padding: 60px 30px;
+    }
+
+
+    @media(min-width: 1200px){
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 60px;
+    }
+
+    // card sub component;
     .card{
+        border: 5px solid rgba(#324D5C, .5);
+        border-radius: 30px;
+        border-radius: .5rem;
+        box-shadow: 5px 5px 15px rgba(#222,.9);
+        overflow: hidden;
+        cursor: pointer;
+        transition: 0.5s linear all;
+        position: relative;
+
+        &:hover{
+
+            border: 5px solid rgba(240, 202, 77, 1);
+            box-shadow: 5px 5px 15px 10px rgba(#222,.9);
+            .card-front img{
+                transform: scale(1.125);
+                filter:blur(5px);
+            }
+
+            .card-back{
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                background: rgba(240, 202, 77, .75);
+                background: rgba(#222, .8);
+            }
+        }
+    }
+
+    .card-wrapper{
 
     }
 
     .card-front{
 
+        img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: 0.25s linear all;
+        }
     }
 
     .card-back{
+        position: absolute;
+        height: calc(100% + 5px);
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(100%);
+        transition: 0.35s linear all;
+        
+
         .card-back-wrapper{
-            
+            height: 100%;
+            width: 100%;
+            padding: 15px;
+
+            a{
+                text-decoration: none;
+                display: block;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+                font-family: 'Roboto Mono',  monospace;
+                text-align: center;
+                font-size: 2.5rem;
+                font-weight: 900;
+                color: rgba(240, 202, 77, 1);
+
+            }   
         }
     }
 }   

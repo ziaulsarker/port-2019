@@ -4,8 +4,6 @@ import path from "path";
 // import styles
 import "style-loader!css-loader!sass-loader!./projects.scss";
 
-console.log(__dirname);
-
 const projects = [
     {
         name : `Health Coach Institute`,
@@ -13,6 +11,33 @@ const projects = [
         img : {
             src : `${ path.resolve(__dirname, "/public/img/hci.png" )}`,
             alt : `Health Coach Institute`
+        }
+    },
+
+    {
+        name : `Sentinel Data Centers`,
+        link : `https://www.sentineldatacenters.com/`,
+        img : {
+            src : `${ path.resolve(__dirname, "/public/img/sentinel.png" )}`,
+            alt : `Sentinel Data Centers`
+        }
+    },
+
+    {
+        name : `Buechel Stone`,
+        link : `https://www.buechelstone.com/`,
+        img : {
+            src : `${ path.resolve(__dirname, "/public/img/buechel.png" )}`,
+            alt : `Buechel Stone`
+        }
+    },
+
+    {
+        name : `Navatar Group`,
+        link : `https://www.navatargroup.com/`,
+        img : {
+            src : `${ path.resolve(__dirname, "/public/img/navatar.png" )}`,
+            alt : `Navatar Group`
         }
     },
 
@@ -71,33 +96,6 @@ const projects = [
     },
 
     {
-        name : `Sentinel Data Centers`,
-        link : `https://www.sentineldatacenters.com/`,
-        img : {
-            src : `${ path.resolve(__dirname, "/public/img/sentinel.png" )}`,
-            alt : `Sentinel Data Centers`
-        }
-    },
-
-    {
-        name : `Navatar Group`,
-        link : `https://www.navatargroup.com/`,
-        img : {
-            src : `${ path.resolve(__dirname, "/public/img/navatar.png" )}`,
-            alt : `Navatar Group`
-        }
-    },
-
-    {
-        name : `Buechel Stone`,
-        link : `https://www.buechelstone.com/`,
-        img : {
-            src : `${ path.resolve(__dirname, "/public/img/buechel.png" )}`,
-            alt : `Buechel Stone`
-        }
-    },
-
-    {
         name : `Github Cards`,
         link : `https://git-cards.herokuapp.com/`,
         img : {
@@ -106,8 +104,6 @@ const projects = [
         }
     }
 ];
-
-console.log(projects[0].img.alt);
 
 
 const Card = props => {
@@ -126,8 +122,8 @@ const Card = props => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 const Projects = props => {
 
@@ -138,8 +134,8 @@ const Projects = props => {
     }
 
     return(
-        <div className="projects">
-            <div className="projects-container container">
+        <div id="projects" className="projects">
+            <div className="projects-container">
                 <div className="projects-wrapper">
                     <div className="project-heading">
                         <h2>Projects</h2>
@@ -152,7 +148,7 @@ const Projects = props => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Projects;
