@@ -16,25 +16,105 @@
         left: 0;
         right: 0;
         transform-origin: top left;
-        transform: skewY(-3deg);
+        transform: skewY(-5deg);
         z-index: 10;
+
+
+        @media(min-width: 768px){
+            transform: skewY(-4deg);
+        }
+
+
+        @media(min-width: 992px){
+            transform: skewY(-3deg);
+        }
 
     }
 
-    &:after{
-        content: "";
-        background: inherit;
-        display: block;
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        transform-origin: top left;
-        transform: skewY(3deg);
-        z-index: 10;
+    // &:after{
+    //     content: "";
+    //     background: inherit;
+    //     display: block;
+    //     height: 100%;
+    //     width: 100%;
+    //     position: absolute;
+    //     top: 0;
+    //     bottom: 0;
+    //     left: 0;
+    //     right: 0;
+    //     transform-origin: top left;
+    //     transform: skewY(3deg);
+    //     z-index: 10;
+
+    // }
+}
+
+
+.projects-container{
+    position: relative;
+    z-index: 11;
+
+    @media(min-width: 992px){
+        max-width: 1400px;
+        width: 85%;
+        margin: 0 auto; 
 
     }
 }
+
+.projects-wrapper{
+    padding: 30px 15px;
+
+    @media(min-width: 768px){
+        padding: 45px 15px;   
+    }
+
+    @media(min-width: 992px){
+        padding: 60px 15px;   
+    }
+}
+
+.project-heading{
+    text-align: center;
+
+    h2{
+        margin: 0 auto 20px;
+        font-family: 'Inconsolata', monospace;
+        color: rgba(240, 202, 77, 1);
+        font-weight: 700;
+        font-size: 2.25rem;
+        position: relative;
+        display: inline-block;
+
+        &:after{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 5px;
+            background: #fff;
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+        }
+    }   
+}
+
+.project-section{
+
+}
+
+.project-section-wrapper{
+    .card{
+
+    }
+
+    .card-front{
+
+    }
+
+    .card-back{
+        .card-back-wrapper{
+            
+        }
+    }
+}   
