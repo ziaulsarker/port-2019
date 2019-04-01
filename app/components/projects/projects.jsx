@@ -52,7 +52,59 @@ const projects = [
         }
     },
 
+    {
+        name : `Gilbert Displays`,
+        link : `http://www.gilbertexperience.com/`,
+        img : {
+            src : `${ path.resolve(__dirname, "/public/img/gilbert.png" )}`,
+            alt : `Gilbert Displays`
+        }
+    },
 
+    {
+        name : `Be Ready Long Island`,
+        link : `https://www.bereadyli.org/`,
+        img : {
+            src : `${ path.resolve(__dirname, "/public/img/bereadyli.png" )}`,
+            alt : `Be Ready Long Island`
+        }
+    },
+
+    {
+        name : `Sentinel Data Centers`,
+        link : `https://www.sentineldatacenters.com/`,
+        img : {
+            src : `${ path.resolve(__dirname, "/public/img/sentinel.png" )}`,
+            alt : `Sentinel Data Centers`
+        }
+    },
+
+    {
+        name : `Navatar Group`,
+        link : `https://www.navatargroup.com/`,
+        img : {
+            src : `${ path.resolve(__dirname, "/public/img/navatar.png" )}`,
+            alt : `Navatar Group`
+        }
+    },
+
+    {
+        name : `Buechel Stone`,
+        link : `https://www.buechelstone.com/`,
+        img : {
+            src : `${ path.resolve(__dirname, "/public/img/buechel.png" )}`,
+            alt : `Buechel Stone`
+        }
+    },
+
+    {
+        name : `Github Cards`,
+        link : `https://git-cards.herokuapp.com/`,
+        img : {
+            src : `${ path.resolve(__dirname, "/public/img/git.png" )}`,
+            alt : `Github Cards`
+        }
+    }
 ];
 
 console.log(projects[0].img.alt);
