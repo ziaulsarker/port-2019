@@ -7,6 +7,9 @@ module.exports = {
         "style-loader!css-loader!bootstrap/dist/css/bootstrap.min.css",
         "script-loader!jquery/dist/jquery.min.js",
         "script-loader!bootstrap/dist/js/bootstrap.min.js",
+        "style-loader!css-loader!animate.css/animate.min.css",
+        "script-loader!wowjs/dist/wow.min.js",
+
         "./app/app.jsx"
     ],
 
