@@ -1,0 +1,15 @@
+.social{
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
+    height: 100vh;
+
+    margin-bottom: 100px;
+
+
+    canvas.canvas{
+        position: absolute;
+        display: block;
+    }
+}
+

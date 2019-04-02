@@ -11,6 +11,7 @@ import Nav from "Nav";
 import Hero from "Hero";
 import About from "About";
 import Projects from "Projects";
+import Social from "Social";
 
 
 
@@ -25,6 +26,7 @@ const Portfolio = props => {
                     <Hero></Hero>
                     <About></About>
                     <Projects></Projects>
+                    <Social></Social>
                 </main>
 
             </div>

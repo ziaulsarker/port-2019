@@ -41,7 +41,8 @@ module.exports = {
             Nav: path.resolve(__dirname, 'app/components/nav/nav.jsx'),
             Hero: path.resolve(__dirname, "app/components/hero/hero.jsx"),
             About: path.resolve(__dirname, "app/components/about/about.jsx"),
-            Projects: path.resolve(__dirname, "app/components/projects/projects.jsx")
+            Projects: path.resolve(__dirname, "app/components/projects/projects.jsx"),
+            Social: path.resolve(__dirname, "app/components/social/social.jsx"),
         }
     }
 }
