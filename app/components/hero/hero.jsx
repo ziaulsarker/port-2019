@@ -16,7 +16,7 @@ class Hero extends React.Component {
                 <canvas></canvas>
                 <div className="HeroContent col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
                     <h1>Hello, I'm <span>Ziaul Sarker</span>. Front End Developer with a passion for <span> Javascript</span>!</h1>
-                    <a href="#">View my work <span className="fas fa-arrow-right"></span></a>
+                    <a href="#projects">View my work <span className="fas fa-arrow-right"></span></a>
                 </div>
 
             </div>
@@ -151,8 +151,17 @@ class Hero extends React.Component {
         init();
         animate();
 
-    }
 
+
+        const initBaffel = (selector, settings) => {
+            const baffelText = baffle(document.querySelector(selector),settings);
+            return baffelText;
+        } 
+
+        initBaffel(".HeroContent h1", {
+            characters: '</>!?{}</>i()+&-i</>#$()=>{}i'
+        }).reveal(1800);
+    }
 
 }
 

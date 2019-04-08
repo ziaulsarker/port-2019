@@ -11,8 +11,7 @@ const projects = [
         img : {
             src : `${ path.resolve(__dirname, "/public/img/hci.png" )}`,
             alt : `Health Coach Institute`
-        },
-        animationDelay : ".3s"
+        }
     },
 
     {
@@ -21,8 +20,7 @@ const projects = [
         img : {
             src : `${ path.resolve(__dirname, "/public/img/sentinel.png" )}`,
             alt : `Sentinel Data Centers`
-        },
-        animationDelay : ".6s"
+        }
     },
 
     {
@@ -31,8 +29,7 @@ const projects = [
         img : {
             src : `${ path.resolve(__dirname, "/public/img/buechel.png" )}`,
             alt : `Buechel Stone`
-        },
-        animationDelay : ".9s"
+        }
     },
 
     {
@@ -41,8 +38,7 @@ const projects = [
         img : {
             src : `${ path.resolve(__dirname, "/public/img/navatar.png" )}`,
             alt : `Navatar Group`
-        },
-        animationDelay : ".3s"
+        }
     },
 
     {
@@ -51,8 +47,7 @@ const projects = [
         img : {
             src : `${ path.resolve(__dirname, "/public/img/hcilive.png" )}`,
             alt : `HCI Live`
-        },
-        animationDelay : ".6s"
+        }
     },
 
     {
@@ -61,8 +56,7 @@ const projects = [
         img : {
             src : `${ path.resolve(__dirname, "/public/img/fxna.png" )}`,
             alt : `Functional Nutrition Alliance`
-        },
-        animationDelay : ".9s"
+        }
     },
 
     {
@@ -71,8 +65,7 @@ const projects = [
         img : {
             src : `${ path.resolve(__dirname, "/public/img/wilbur.png" )}`,
             alt : `Wilbur Ellis`
-        },
-        animationDelay : ".3s"
+        }
     },
 
     {
@@ -81,8 +74,7 @@ const projects = [
         img : {
             src : `${ path.resolve(__dirname, "/public/img/national.png" )}`,
             alt : `National Holdings`
-        },
-        animationDelay : ".6s"
+        }
     },
 
     {
@@ -91,8 +83,7 @@ const projects = [
         img : {
             src : `${ path.resolve(__dirname, "/public/img/gilbert.png" )}`,
             alt : `Gilbert Displays`
-        },
-        animationDelay : ".9s"
+        }
     },
 
     {
@@ -101,8 +92,7 @@ const projects = [
         img : {
             src : `${ path.resolve(__dirname, "/public/img/bereadyli.png" )}`,
             alt : `Be Ready Long Island`
-        },
-        animationDelay : ".3s"
+        }
     },
 
     {
@@ -111,15 +101,14 @@ const projects = [
         img : {
             src : `${ path.resolve(__dirname, "/public/img/git.png" )}`,
             alt : `Github Cards`
-        },
-        animationDelay : ".6s"
+        }
     }
 ];
 
 
 const Card = props => {
     return(
-        <div className="card wow fadeInUP" data-wow-delay={ props.animationDelay }>
+        <div className="card wow fadeInUP">
             <div className="card-wrapper">
                 <div className="card-front">
                     <img src={ props.img.src } alt={props.img.alt}></img>

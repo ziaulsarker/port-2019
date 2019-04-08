@@ -219,7 +219,9 @@ span.last-name{
 }
 
 .contact-modal-body{
-
+    @media(min-width: 768px){
+        border: 5px solid #f0ca4d;
+    }
 }
 
 .modal-body--wrapper{

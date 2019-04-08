@@ -16,101 +16,63 @@ class Social extends React.Component{
         return(
             <div className="social">
                 <canvas className="canvas"></canvas>
+                <div className="content">
+                  <h6 className="h1">Need help with your next project, or just want to say hello?</h6>
+                  <a data-toggle="modal" data-target="#myModal" href="#"> Get in touch </a>
+                </div>
             </div>  
         )
     }
 
     componentDidMount(){
+      let canvas = document.querySelector(".social .canvas");
+      let ctx = canvas.getContext("2d");
+      canvas.width = parseInt(getComputedStyle(canvas).width);
+      canvas.height = parseInt(getComputedStyle(canvas).height);
 
-        function Line(x, y, radius, spacing, color, speed, orient) {
-            this.x = x;
-            this.y = y;
-            this.radius = radius;
-            this.spacing = spacing;
-            this.spacing2 = spacing * (Math.random() * 2);
-            this.color = color;
-            this.speed = speed;
-            this.rotation = 0;
-            this.orientation = orient;
-            this.lineWidth = 5 + Math.random() * 10;
-          }
-          
-          Line.prototype.draw = function(ctx) {
-            ctx.save();
-            ctx.lineWidth = this.lineWidth;
-            ctx.lineCap = 'round';
-            ctx.setLineDash([this.spacing, this.spacing2]);
-            ctx.translate(this.x, this.y);
-            ctx.rotate(this.rotation * 180 / Math.PI)
-            ctx.strokeStyle = this.color;
+      window.addEventListener("resize", (e) => {
+        canvas.width = parseInt(getComputedStyle(canvas).width);
+        canvas.height = parseInt(getComputedStyle(canvas).height);
+      })
+
+      let P = 4;
+      let A = 4;
+
+      function draw(shift) {
+        let w = canvas.width;
+        let h = canvas.height;
+        shift = shift >= 500*Math.PI ? shift - 100*Math.PI : shift;
+        ctx.clearRect(0, 0, w, h);
+        let grd = ctx.createLinearGradient(0, 0, w, h);
+        grd.addColorStop(0, '#324D5C');
+        grd.addColorStop(.33, "#f0ca4d");
+        grd.addColorStop(.5, "#f0ca4d");
+        grd.addColorStop(.66, "#f0ca4d");
+        grd.addColorStop(1, '#324D5C');
+        ctx.strokeStyle = grd;
+
+        ctx.lineCap = "square";
+        for (let i = 0; i < w; ) {
+            let _A = Math.abs(A*Math.cos(2*i));
             ctx.beginPath();
-            ctx.arc(0, 0, this.radius, 0, Math.PI * 2, true);
+            let pos = Math.exp(-_A * i / w) * Math.sin(P * Math.PI * (i + shift) / w);
+            pos *= h / 2;
+            let lw = Math.exp(-_A * i / w) * Math.sin(3 * Math.PI * (i - shift) / w) * 2;
+            ctx.lineWidth = (lw)+1;
+            ctx.lineTo(i, h / 2 - pos);
+            ctx.closePath();
             ctx.stroke();
-            ctx.restore();
-          }
-          
-          function Rainbow() {
-            this.lines = [];
-            this.colors = ['#324D5C', 'rgba(240,202,77, 1)', '#222', '#324D5C', 'rgba(240,202,77, 1)', '#222'];
-          }
-          
-          Rainbow.prototype = {
-            constructor: Rainbow,
-            init: function() {
-              this.populateLines(width / 2, width / 50);
-            },
-            populateLines: function(num, spacing) {
-              var i, line, orientCounter = 0, len = this.colors.length - 1;
-              for (i = 0; i <= num; i += spacing) {
-                if (orientCounter % 2 == 0) {
-                  line = new Line(width / 2, height, i, 10 + Math.random() * 50, this.colors[Math.floor(Math.random() * len)], 0.0001 + Math.random() * 0.0001, 1);
-                } else if (orientCounter % 2 !== 0) {
-                  line = new Line(width / 2, height, i, 10 + Math.random() * 50, this.colors[Math.floor(Math.random() * len)], 0.0001 + Math.random() * 0.0001, 0);
-                }
-                orientCounter++;
-                this.lines.push(line);
-              }
-            },
-            render: function(ctx) {
-              this.lines.forEach(renderLine);
-          
-              function renderLine(line) {
-                if (line.orientation == 1) {
-                  line.rotation += line.speed;
-                } else if (line.orientation == 0) {
-                  line.rotation -= line.speed;
-                }
-                line.draw(ctx);
-              }
-          
-          
-            }
-          }
-          
-          var canvas, ctx, width, height, rainbow;
-          
-          init();
-          function init() {
-            canvas = document.querySelector('.social .canvas');
-            ctx = canvas.getContext('2d');
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-            rainbow = new Rainbow();
-          
-            rainbow.init(window.innerWidth, window.innerHeight);
-          
-            ctx.fillStyle = '#fff';
-            renderFrame();
-          }
-          
-          function renderFrame() {
-            window.requestAnimationFrame(renderFrame, canvas);
-            ctx.fillRect(0, 0, width, height);
-            rainbow.render(ctx);
-          }
+            i += 1;
+        }
 
-
+        window.requestAnimationFrame(() => {
+            draw(shift + 1.25);
+        });
+      }
+      draw(0);
+      
     }
+
 }
 
 export default Social;

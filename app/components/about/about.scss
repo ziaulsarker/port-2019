@@ -12,9 +12,6 @@
 
     }
 
-    // @media(min-width: 992px){
-    //     width: 75%;
-    // }
 }
 
 .about-info-wrapper{
@@ -80,7 +77,8 @@
             position: relative;
             display: inline-block;
             margin-bottom: 20px;
-
+            text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+            
             &:after{
                 content: "";
                 display: block;
@@ -90,6 +88,7 @@
                 position: absolute;
                 bottom: -3px;
                 left: 0;
+                box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
             }
         }
 
