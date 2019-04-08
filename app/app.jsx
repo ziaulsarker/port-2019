@@ -28,8 +28,8 @@ const Portfolio = props => {
                     <About></About>
                     <Projects></Projects>
                     <Social></Social>
-                    <Footer></Footer>
                 </main>
+                <Footer></Footer>
 
             </div>
         </Router>
