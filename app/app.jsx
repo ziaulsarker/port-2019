@@ -12,6 +12,7 @@ import Hero from "Hero";
 import About from "About";
 import Projects from "Projects";
 import Social from "Social";
+import Footer from "Footer";
 
 
 
@@ -27,6 +28,7 @@ const Portfolio = props => {
                     <About></About>
                     <Projects></Projects>
                     <Social></Social>
+                    <Footer></Footer>
                 </main>
 
             </div>

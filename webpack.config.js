@@ -44,6 +44,7 @@ module.exports = {
             About: path.resolve(__dirname, "app/components/about/about.jsx"),
             Projects: path.resolve(__dirname, "app/components/projects/projects.jsx"),
             Social: path.resolve(__dirname, "app/components/social/social.jsx"),
+            Footer: path.resolve(__dirname, "app/components/footer/footer.jsx"),
         }
     }
 }
