@@ -66,7 +66,7 @@ class Social extends React.Component{
         }
 
         window.requestAnimationFrame(() => {
-            draw(shift + 1.25);
+            draw(shift + 1);
         });
       }
       draw(0);
