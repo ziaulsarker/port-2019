@@ -36,5 +36,52 @@
             }
             }
         });
+
+
+
+
+        // // sticky nav
+        // // When the user scrolls the page, execute myFunction 
+        // window.onscroll = function() {myFunction()};
+
+        // // Get the navbar
+        // let navbar = document.querySelector("header.header");
+
+        // // Get the offset position of the navbar
+        // let sticky = navbar.offsetTop;
+
+        // // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        // function myFunction() {
+
+        //     if (window.pageYOffset >= 100) {
+        //         navbar.classList.add("sticky")
+        //     } else {
+        //         navbar.classList.remove("sticky");
+        //     }
+        // }
+
+        let yourNavigation = $(".nav");
+        stickyDiv = "sticky";
+        yourHeader = document.querySelector(".HeroContent a").offsetTop + 60,
+        fromTop = window.scrollY;
+
+        if(fromTop >= yourHeader){
+            yourNavigation.addClass(stickyDiv);
+        } else {
+            yourNavigation.removeClass(stickyDiv);
+        }
+
+
+
+        console.log(window.scrollY);
+
+
+        $(window).scroll(function() {
+            if( $(this).scrollTop() > yourHeader ) {
+                yourNavigation.addClass(stickyDiv);
+            } else {
+                yourNavigation.removeClass(stickyDiv);
+            }
+        });
     })
 })(jQuery)

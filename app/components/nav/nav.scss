@@ -8,13 +8,15 @@
     padding: 15px 30px;
     display: grid;
     grid-gap: 15px;
-    grid-template-columns:  1fr;
+    // grid-template-columns:  1fr;
+    grid-template-columns: repeat(2, 1fr);
 
     position: absolute;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 100;
+    transition: all 0.3s linear;
 
     @media(min-width: 768px){
         grid-template-columns: repeat(2, 1fr);
@@ -31,6 +33,10 @@
              0px 8px 13px rgba(0,0,0,0.1),
              0px 18px 23px rgba(0,0,0,0.1);
 
+        a{
+            text-decoration: none;
+        }
+
     }
 }
 
@@ -42,10 +48,14 @@
     ul{
         padding: 0;
         margin: 0;
-        display: inline-flex;
+        display: none;
         margin-right: 30px;
         align-items: center;
         justify-content: center;
+
+        @media(min-width: 768px){
+            display: inline-flex;
+        }
     }
 
     li.nav-item{
@@ -353,5 +363,18 @@ span.last-name{
         }
     }
 
+
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: #fff;
+
+}
+
+.sticky + .nav {
 
 }

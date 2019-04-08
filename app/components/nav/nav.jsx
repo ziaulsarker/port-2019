@@ -14,12 +14,14 @@ const Navigation = (props) => {
 
     return(
 
-        <header className="header">
+        <header className="header" id="header">
             <nav className="nav">
                 <div className="nav-left">
                     <p className="full-name h1">
-                        <span className="first-name">Z</span>
-                        <span className="last-name">S</span>
+                        <a href="#header">
+                            <span className="first-name">Z</span>
+                            <span className="last-name">S</span>
+                        </a>
                     </p>
                 </div>
                 <div className="nav-right">
