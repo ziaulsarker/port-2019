@@ -48,7 +48,7 @@ class About extends React.Component{
                         <div className="about-copy">
                             <div className="text">
                                 <h2> About Me </h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut purus sit amet tortor tempor tristique eget in tellus. Vestibulum ut gravida quam, ornare varius metus. Pellentesque iaculis leo et neque vehicula, ut hendrerit augue mattis. Quisque ac sem condimentum, scelerisque neque quis, dignissim dui. Nam ultrices massa vitae efficitur tristique. Duis quis felis eget tortor luctus finibus at vel odio. Curabitur ullamcorper, lacus ut lacinia semper, nibh sapien consectetur lorem, nec faucibus sapien quam eget sapien</p>
+                                <p>Hey, I'm Ziaul. Front End Developer residing in the great city of New York. Stuck in an infinite loop of learning, creating, and growing. I'm very passionate about programing, it has opened my eyes to new ways of thinking and doing. The more I learn the more I realize I don’t know s**t. I believe the learning process for a developer is a never ending journey. <br></br><span> #juniordevforlife </span></p>
                             </div>
                             <div className="expertise">
                                 <div>
