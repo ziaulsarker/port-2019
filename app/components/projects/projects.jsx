@@ -78,6 +78,15 @@ const projects = [
     },
 
     {
+        name : `Health Coach Match`,
+        link : `https://www.healthcoachmatch.com/`,
+        img : {
+            src : `${ path.resolve(__dirname, "/public/img/match.png" )}`,
+            alt : `Health Coach Match`
+        }
+    },
+
+    {
         name : `Gilbert Displays`,
         link : `http://www.gilbertexperience.com/`,
         img : {
@@ -102,7 +111,7 @@ const projects = [
             src : `${ path.resolve(__dirname, "/public/img/git.png" )}`,
             alt : `Github Cards`
         }
-    }
+    },
 ];
 
 
