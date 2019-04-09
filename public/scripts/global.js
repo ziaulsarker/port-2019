@@ -71,11 +71,6 @@
             yourNavigation.removeClass(stickyDiv);
         }
 
-
-
-        console.log(window.scrollY);
-
-
         $(window).scroll(function() {
             if( $(this).scrollTop() > yourHeader ) {
                 yourNavigation.addClass(stickyDiv);
