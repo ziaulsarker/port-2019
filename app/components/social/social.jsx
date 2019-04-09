@@ -52,7 +52,7 @@ class Social extends React.Component{
         ctx.strokeStyle = grd;
 
         ctx.lineCap = "square";
-        for (let i = 0; i < 100000; ) {
+        for (let i = 0; i < w; ) {
             let _A = Math.abs(A*Math.cos(2*i));
             ctx.beginPath();
             let pos = Math.exp(-_A * i / w) * Math.sin(P * Math.PI * (i + shift) / w);
