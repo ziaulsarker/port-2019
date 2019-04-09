@@ -167,7 +167,7 @@ class Hero extends React.Component {
 
         initBaffel(".HeroContent h1 span.normal", {
             characters: '</>!?{}</>i()+&-i</>#$()=>{}i'
-        }, true).reveal(1800);
+        }, true).reveal(2500);
 
         initBaffel(".HeroContent h1 span.yellow", {
             characters: '</>!?{}</>i()+&-i</>#$()=>{}i</>!?{}</>i()+&-i</>#$()=>{}i</>!?{}</>i()+&-i</>#$()=>{}i'
