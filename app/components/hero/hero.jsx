@@ -155,15 +155,10 @@ class Hero extends React.Component {
 
 
         const initBaffel = (selector, settings, nodeList) => {
-
-
-            const baffelText = (nodeList === true) ? baffle(document.querySelectorAll(selector),settings) : baffle(document.querySelector(selector),settings);
-            return baffelText;
+            return (nodeList === true) ? baffle(document.querySelectorAll(selector),settings) : baffle(document.querySelector(selector),settings);
         } 
 
         let spanName = String($("<span>Ziaul Sarker</span>"));
-
-        console.log(spanName.toString());
 
         initBaffel(".HeroContent h1 span.normal", {
             characters: '</>!?{}</>i()+&-i</>#$()=>{}i'
