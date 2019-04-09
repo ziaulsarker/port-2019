@@ -15,7 +15,8 @@ class Hero extends React.Component {
             <div className="hero">
                 <canvas></canvas>
                 <div className="HeroContent col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
-                    <h1>Hello, I'm <span>Ziaul Sarker</span>. Front End Developer with a passion for <span> Javascript</span>!</h1>
+                    <h1>
+                        <span className="normal"> Hello, I'm </span><span className="yellow">Ziaul Sarker</span><span className="normal">. Front End Developer with a passion for</span> <span className="yellow"> Javascript</span><span className="normal">!</span></h1>
                     <a href="#projects">View my work <span className="fas fa-arrow-right"></span></a>
                 </div>
 
@@ -153,14 +154,24 @@ class Hero extends React.Component {
 
 
 
-        const initBaffel = (selector, settings) => {
-            const baffelText = baffle(document.querySelector(selector),settings);
+        const initBaffel = (selector, settings, nodeList) => {
+
+
+            const baffelText = (nodeList === true) ? baffle(document.querySelectorAll(selector),settings) : baffle(document.querySelector(selector),settings);
             return baffelText;
         } 
 
-        initBaffel(".HeroContent h1", {
+        let spanName = String($("<span>Ziaul Sarker</span>"));
+
+        console.log(spanName.toString());
+
+        initBaffel(".HeroContent h1 span.normal", {
             characters: '</>!?{}</>i()+&-i</>#$()=>{}i'
-        }).reveal(1500);
+        }, true).reveal(1800);
+
+        initBaffel(".HeroContent h1 span.yellow", {
+            characters: '</>!?{}</>i()+&-i</>#$()=>{}i</>!?{}</>i()+&-i</>#$()=>{}i</>!?{}</>i()+&-i</>#$()=>{}i'
+        }, true).reveal(1500);
     }
 
 }
